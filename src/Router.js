@@ -15,13 +15,14 @@ export default function Routers() {
     return (
         <div>
          <Router>
-          {/* <Sidebar/> */}
         <Switch>
-          <Route path="/addproduct">
-          {/* <AddDesign /> */}
+          <Route exact path="/">
+          <Login/>
+          </Route> 
+          <Route exact path="/addproduct">
           <Sidebar Component={<AddDesign />}/>
           </Route>
-          <Route path="/dashboard">
+          <Route exact path="/dashboard">
           <Sidebar Component={<Dashboard/>}/>
           </Route>
         </Switch>

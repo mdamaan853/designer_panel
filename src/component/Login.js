@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import { register } from "./loginstyle";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -48,7 +49,10 @@ class Registration extends Component {
     if (this.state.email === "") {
       return false;
     }
-    return true;
+    else{
+      // window.location('/dashboard')
+      return true;
+    }
   };
   submitRegistration = e => {
     e.preventDefault();
