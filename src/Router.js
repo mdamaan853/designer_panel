@@ -6,10 +6,10 @@ import {
     Link
   } from "react-router-dom";
 import Login from "./component/Login"
-import Navbar from "./component/Navbar"
-import Sidebar from "./component/Sidebar"
-import AddDesign from './component/product/AddDesign';
+import Sidebar from "./component/sidebar/Sidebar"
+import AddDesign from './component/product/AddNewProduct/AddDesign';
 import Dashboard from './component/dashboard/dashboard';
+import ListProduct from './component/product/listProduct/ListProduct';
 
 export default function Routers() {
     return (
@@ -20,10 +20,13 @@ export default function Routers() {
           <Login/>
           </Route> 
           <Route exact path="/addproduct">
-          <Sidebar Component={<AddDesign />}/>
+          <Sidebar Component={<AddDesign />} name="Add Product"/>
           </Route>
           <Route exact path="/dashboard">
-          <Sidebar Component={<Dashboard/>}/>
+          <Sidebar Component={<Dashboard/>} name="Dashboard"/>
+          </Route>
+          <Route exact path="/myproducts">
+          <Sidebar Component={<ListProduct/>} name="My Products"/>
           </Route>
         </Switch>
     </Router>

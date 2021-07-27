@@ -74,9 +74,9 @@ function FileUpload({navigation}) {
         onRemove={onRemove}
         dataSources={dataSources}
       />
-      <div style={{display:"flex",flexDirection:"row-reverse"}}>
-      <Button variant="contained" color="primary" onClick={()=>navigation.next()} >Continue</Button>
-    </div>
+      <div style={{position:"fixed",bottom:"10px" ,right:"20px"}}>
+            <Button variant="contained" color="primary" onClick={()=>navigation.next()} >Continue</Button>
+            </div>
     </div>
   );
 }

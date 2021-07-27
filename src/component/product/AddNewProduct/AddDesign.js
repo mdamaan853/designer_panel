@@ -1,8 +1,5 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
-// import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -122,10 +119,11 @@ export default function AddDesign() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
     return (
         <div>
-             <Grid item xs={12} md={12} lg={12}>
+             <Grid item xs={12} md={12} lg={12} >
               <Paper className={fixedHeightPaper}>
                 <UploadForm/>
               </Paper>
+            
             </Grid>      
         </div>
     )

@@ -31,7 +31,7 @@ export const register = theme => ({
     flexDirection: "column",
     alignItems: "center",
     background:
-    "linear-gradient(180deg,rgb(147 212 255) 15%, rgb(255 239 220) 90%)",
+    "linear-gradient(180deg,rgb(147 212 255) 15%, #ffffff 90%)",
     boxShadow: ".2px 12px 18px rgba(131,153,167,0.6)",
 
     "&:hover": {

@@ -28,8 +28,6 @@ import { mainListItems, secondaryListItems } from './listItem';
 // import Chart from './Chart';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
-import AddDesign from './product/AddDesign';
-import Dashboard from './dashboard/dashboard';
 
 function Copyright() {
   return (
@@ -52,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
+    backgroundColor:"#FFFFFF"
   },
   toolbarIcon: {
     display: 'flex',
@@ -77,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+  
   },
   menuButtonHidden: {
     display: 'none',
@@ -88,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
+    backgroundColor:"#FFFFFF",
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -125,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Sidebar({Component}) {
+export default function Sidebar({Component,name}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -141,21 +142,23 @@ export default function Sidebar({Component}) {
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
+          {/* <p style={{color:"black"}}>hello</p> */}
           <IconButton
             edge="start"
-            color="inherit"
+            color="black"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
           >
             <MenuIcon />
           </IconButton>
-          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-              Add Product
+          <Typography component="h1" variant="h4" style={{fontWeight:"bold",fontFamily:"roboto" ,color:"GrayText"}} noWrap className={classes.title}>
+            {name}
         </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+          <Typography style={{color:"GrayText",margin:"0px 2px"}}>amaan@gmail.com</Typography>
+              <NotificationsIcon style={{color:"GrayText"}}/>
             </Badge>
           </IconButton>
         </Toolbar>
@@ -169,6 +172,7 @@ export default function Sidebar({Component}) {
       >
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleDrawerClose}>
+            <Typography variant="h4" color="grey" style={{marginRight:"45px",fontFamily:"roboto"}}>Designer</Typography>
             <ChevronLeftIcon />
           </IconButton>
         </div>
