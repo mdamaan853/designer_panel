@@ -31,6 +31,7 @@ export default function ShippingInfo({navigation}) {
         <Grid item xs={6} style={{ padding: "0px 20px" }}>
           <label
             style={{
+                
               fontFamily: "roboto",
               fontSize: "16px",
               float: "left",
