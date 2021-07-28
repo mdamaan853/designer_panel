@@ -24,7 +24,7 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItem';
+import { MainListItems, secondaryListItems } from './listItem';
 // import Chart from './Chart';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
@@ -177,7 +177,7 @@ export default function Sidebar({Component,name}) {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List><MainListItems/></List>
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>

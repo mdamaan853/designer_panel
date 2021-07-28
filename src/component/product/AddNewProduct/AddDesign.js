@@ -1,5 +1,7 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
+
+import { Button, TextField, TextareaAutosize } from "@material-ui/core";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -24,6 +26,7 @@ import Paper from '@material-ui/core/Paper';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
 import UploadForm from "./uploadProductForm"
+import UploadblukProduct from './uploadblukProduct';
 
 const drawerWidth = 240;
 
@@ -117,14 +120,24 @@ export default function AddDesign() {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const [productType,setProductType]=React.useState(false)
     return (
         <div>
-             <Grid item xs={12} md={12} lg={12} >
-              <Paper className={fixedHeightPaper}>
-                <UploadForm/>
-              </Paper>
-            
+             <Grid xs={12} md={12} lg={12} >
+                <Grid  item sm={12} xm={12} style={{display:"flex",flexDirection:"row-reverse"}} >
+                  {productType ? 
+                <Button onClick={()=>{setProductType(false)}} color="primary" variant="contained">ADD A SINGLE PRODUCT</Button>:
+                <Button onClick={()=>{setProductType(true)}} color="primary" variant="contained">ADD PRODUCT IN BLUK</Button>}
+                </Grid>
+                {/* <Grid spacing={1} item sm={6} xm={12}>
+                </Grid> */}
             </Grid>      
+              <Paper className={fixedHeightPaper}> 
+              {productType?
+                <UploadblukProduct/>: 
+                <UploadForm/> 
+              }
+               </Paper>
         </div>
     )
 }

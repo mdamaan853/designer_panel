@@ -15,6 +15,7 @@ export default function Product_detail({ navigation }) {
               </label>
             <TextField
               id="outlined-basic"
+              // type="file"
               // label="Product Name"
               variant="outlined"
               size="small"

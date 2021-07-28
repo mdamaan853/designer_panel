@@ -8,6 +8,7 @@ import {
   Grid,
   Paper,
 } from "@material-ui/core";
+import {Link} from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -134,6 +135,7 @@ export default function ShippingInfo({navigation}) {
         >
           Back
         </Button>
+        <Link to="/myproducts">
         <Button
           variant="contained"
           color="primary"
@@ -141,6 +143,7 @@ export default function ShippingInfo({navigation}) {
         >
           Submit
         </Button>
+        </Link>
       </div>
         </div>
     )

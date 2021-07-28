@@ -14,9 +14,37 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import Sidebar from "./Sidebar"
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import Collapse from '@material-ui/core/Collapse';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
+// import Sidebar from "./Sidebar"
 
-export const mainListItems = (
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(2)
+  },
+}));
+export const MainListItems = ()=>{
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+  
+
+  return(
   <div>
       <Link to="/dashboard">
     <ListItem button>
@@ -30,16 +58,35 @@ export const mainListItems = (
       <ListItemIcon>
         <ShoppingCartIcon color="secondary" style={{color:"#6495ED"}} />
       </ListItemIcon>
-      <ListItemText secondary="Orders" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
+      <ListItemText secondary="Orders" style={{color:"#6495ED"}}/>
     </ListItem>
-    <Link to="/addproduct">
+    <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <InboxIcon style={{color:"#6495ED"}} />
+        </ListItemIcon>
+        <ListItemText primary="Add Product" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+        <Link to="/addproduct">
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon color="secondary" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
+        {/* <PeopleIcon color="secondary" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/> */}
       </ListItemIcon>
-      <ListItemText secondary="Add Product" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
+      <ListItemText secondary="Local Product" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
     </ListItem>
     </Link>
+    <Link to="/addproduct">
+    <ListItem button className={classes.nested}>
+      <ListItemIcon>
+        {/* <PeopleIcon color="secondary" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/> */}
+      </ListItemIcon>
+      <ListItemText secondary="Designed Product" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
+    </ListItem>
+    </Link>
+        </List>
+      </Collapse>
     <Link to="/myproducts">
     <ListItem button>
       <ListItemIcon>
@@ -61,7 +108,7 @@ export const mainListItems = (
       <ListItemText secondary="Integrations" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
     </ListItem>
   </div>
-);
+  )};
 
 export const secondaryListItems = (
   <div>
