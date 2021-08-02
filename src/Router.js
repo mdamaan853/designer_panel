@@ -10,6 +10,7 @@ import Sidebar from "./component/sidebar/Sidebar"
 import AddDesign from './component/product/AddNewProduct/AddDesign';
 import Dashboard from './component/dashboard/dashboard';
 import ListProduct from './component/product/listProduct/ListProduct';
+import DesignedProduct from './component/product/designedProduct/designedProduct';
 
 export default function Routers() {
     return (
@@ -20,7 +21,10 @@ export default function Routers() {
           <Login/>
           </Route> 
           <Route exact path="/addproduct">
-          <Sidebar Component={<AddDesign />} name="Add Product"/>
+          <Sidebar Component={<AddDesign />} name="Add Local Product"/>
+          </Route>
+          <Route exact path="/designedproduct">
+          <Sidebar Component={<DesignedProduct />} name="Add Designed Product"/>
           </Route>
           <Route exact path="/dashboard">
           <Sidebar Component={<Dashboard/>} name="Dashboard"/>

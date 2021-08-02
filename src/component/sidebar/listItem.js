@@ -77,7 +77,7 @@ export const MainListItems = ()=>{
       <ListItemText secondary="Local Product" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/>
     </ListItem>
     </Link>
-    <Link to="/addproduct">
+    <Link to="/designedproduct">
     <ListItem button className={classes.nested}>
       <ListItemIcon>
         {/* <PeopleIcon color="secondary" style={{color:"#6495ED"}}style={{color:"#6495ED"}}/> */}
