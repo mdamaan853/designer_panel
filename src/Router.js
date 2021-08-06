@@ -10,6 +10,7 @@ import Sidebar from "./component/sidebar/Sidebar"
 import AddDesign from './component/product/AddNewProduct/AddDesign';
 import Dashboard from './component/dashboard/dashboard';
 import ListProduct from './component/product/listProduct/ListProduct';
+import ListOrder from './component/order/listOrder';
 import DesignedProduct from './component/product/designedProduct/designedProduct';
 
 export default function Routers() {
@@ -31,6 +32,9 @@ export default function Routers() {
           </Route>
           <Route exact path="/myproducts">
           <Sidebar Component={<ListProduct/>} name="My Products"/>
+          </Route>
+          <Route exact path="/orders">
+          <Sidebar Component={<ListOrder/>} name="My Products"/>
           </Route>
         </Switch>
     </Router>

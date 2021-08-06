@@ -54,12 +54,14 @@ export const MainListItems = ()=>{
       <ListItemText secondary="Dashboard" style={{color:"#6495ED"}} />
     </ListItem>
     </Link>
+    <Link to="/orders">
     <ListItem button>
       <ListItemIcon>
         <ShoppingCartIcon color="secondary" style={{color:"#6495ED"}} />
       </ListItemIcon>
       <ListItemText secondary="Orders" style={{color:"#6495ED"}}/>
     </ListItem>
+    </Link>
     <ListItem button onClick={handleClick}>
         <ListItemIcon>
           <InboxIcon style={{color:"#6495ED"}} />
