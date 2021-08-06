@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import {Button, Icon} from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-// import EditProductModel from './EditProductModel';
+import OrderTrackModel from './TrackModel';
 
 const useStyles = makeStyles({
   table: {
@@ -114,8 +114,7 @@ export default function ListOrder({handleClickOpen}) {
               {/* <TableCell align="left">{row.Length}</TableCell> */}
               <TableCell align="left">{row.price}</TableCell>
               <TableCell align="left" > 
-                 {/* <EditProductModel data={row}/> */}
-                  <Button color="primary" variant="outlined"  onClick={()=>{alert(`Are you want to change Status of ${row.title}`)}}>Track</Button>
+              <OrderTrackModel data={row}/>
               </TableCell>
             </TableRow>
           ))}

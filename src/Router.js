@@ -34,7 +34,7 @@ export default function Routers() {
           <Sidebar Component={<ListProduct/>} name="My Products"/>
           </Route>
           <Route exact path="/orders">
-          <Sidebar Component={<ListOrder/>} name="My Products"/>
+          <Sidebar Component={<ListOrder/>} name="Orders"/>
           </Route>
         </Switch>
     </Router>
