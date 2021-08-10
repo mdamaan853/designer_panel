@@ -70,7 +70,7 @@ export default function OrderTrackModel({data}) {
             <Typography color="textSecondary" style={{margin:"14px 4px"}}>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</Typography>
             <Grid container spacing={2} style={{display:"flex",justifyContent:"space-between"}}>
             <Grid item>
-                <Button id="placed" className={backgroundColor.orderPlaced ? classes.button_blue : classes.button} onClick={()=>{setBackgroundColor({orderPlaced:true})}}>Order Placed</Button>
+              <Button id="placed" className={backgroundColor.orderPlaced ? classes.button_blue : classes.button} onClick={()=>{setBackgroundColor({orderPlaced:true})}}>Order Placed</Button>
             </Grid>
             <Grid item>
                 <Button id="transit" className={backgroundColor.orderTransit ? classes.button_yellow : classes.button} onClick={()=>{setBackgroundColor({orderTransit:true})}}>Order Transit</Button>
